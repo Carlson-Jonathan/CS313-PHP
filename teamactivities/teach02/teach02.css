@@ -1,0 +1,44 @@
+* { margin: 0; box-sizing: border-box; }
+
+body {
+    
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: darkblue;
+    color: yellow;
+    width: 100%;
+    padding: 10px;
+}
+
+footer a {
+    color: yellow;
+}
+
+.something {
+    font-size: 1.5em;
+    background-color: darkblue;
+    color: yellow;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.something:hover {
+    font-weight: 800;
+}
+
+button {
+    margin: 10px 0 25px 0;
+    text-align: center;
+    background-color: darkblue;
+    color: yellow;
+    font-size: 1.15em;
+}
+
+p {
+    font-size: 1.25em;
+}
