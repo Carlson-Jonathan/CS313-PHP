@@ -1,0 +1,113 @@
+* { margin: 0; box-sizing: border-box; }
+
+body {
+    background-image: url("../images/grass.jpg");
+    background-attachment: fixed;
+    background-size: auto;
+    width: 800px;
+    margin: auto;
+    height: 450px;
+}
+
+header img {
+    float: left;
+    margin:22% 30px 40px 25px;
+    border-radius: 10px;
+    width: 35%;
+    box-shadow: 8px 8px 5px #444444;
+}
+
+@keyframes colorhead {
+    0%    {color: lightgreen;}
+    50%   {color: yellow;}
+    100%  {color: lightgreen;} 
+}
+
+h1 {
+    display: block;
+    width: 800px;
+    text-align: center;
+    margin: 50px auto 0;
+    background-color: darkgreen;
+    color: lightgreen;
+    font-size: 3.5em;
+    text-indent: -295px;
+    padding: 20px;
+    border-radius: 40px 40px 0 0;
+    box-shadow: 12px 12px 5px #444444;
+    animation-name: colorhead;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+h2 {
+    text-align: left;
+    line-height: 70px;
+    color: #003300;
+    font-size: 1.25em;
+    font-family: Arial;
+    margin: 0 25px;
+    border-bottom: solid darkgreen 1px;
+}
+
+h3 {
+    font-size: 1.6em;
+    color: #e6e600;
+    margin: 15px 0 0;
+    font-family: Arial;
+}
+
+h4 {
+    font-size: 1.25em;
+    color: #003300;
+    font-family: Arial;
+    padding: 21px 20px 0px 20px;
+}
+
+main {
+    background-color: #ccffcc;
+    background: rgb(120, 200, 120);
+    box-shadow: 12px 12px 5px #444444;
+}
+
+li {
+    list-style: none;
+    font-size: 1.25em;
+    padding: 3px;
+}
+
+li a {
+    color: #003300;
+    line-height: 24px;
+}
+
+li:hover {
+    background-color: darkgreen;
+    color: yellow;
+}
+
+li a:hover {
+    color: #e6e600;
+}
+
+a:visited {
+    color: #003300;
+}
+
+footer {
+    background-color: darkgreen;
+    padding: 40px;
+    color: lightgreen;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 12px 12px 5px #444444;
+    text-align: center;
+    animation-name: colorhead;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;    
+}
+
+#fixed {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
