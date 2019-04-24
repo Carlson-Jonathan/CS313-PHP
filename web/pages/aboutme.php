@@ -7,7 +7,7 @@
         <title>About Me</title>
         <meta name = "description" content="About Jonathan Carlson">
         <link rel="stylesheet" href="styles/normalize.css">
-        <link id="styles" rel="stylesheet" href="styles/main.css">
+        <link id="styles" rel="stylesheet" href="/styles/main.css">
     </head>
     
     <body>
@@ -49,8 +49,8 @@
                 </p>
                 
                 <div id="fixed">
-                    <button type="button" onclick="document.getElementById('styles').href='styles/main.css'">Style 1</button>
-                    <button type="button" onclick="document.getElementById('styles').href='styles/main2.css'">Style 2</button>
+                    <button type="button" onclick="document.getElementById('styles').href='/styles/main.css'">Style 1</button>
+                    <button type="button" onclick="document.getElementById('styles').href='/styles/main2.css'">Style 2</button>
                 </div>
             
             </main>  
