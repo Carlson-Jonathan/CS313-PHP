@@ -13,16 +13,16 @@
     <body>
         <div class="align">
             <header>
-                <img src="images/jon.jpg" width="200" alt="Profile picture">
-                <h1> Jonathan Carlson</h1>
+                <?php include $_SERVER['DOCUMENT_ROOT'].'/modules/header.php'; ?>
             </header>
         </div>
+        
         <div class="align">
             <main>
                 <h2>CS313 Web Engineering II</h2>
                 <h3>Assignments:</h3>
                 <ul>
-                    <a href=""><li>About Me</li></a>
+                    <a href="/pages/aboutme.php"><li>About Me</li></a>
                     <a href=""><li>(comming soon!)</li></a>
                     <a href=""><li>(comming soon!)</li></a>
                     <a href=""><li>(comming soon!)</li></a>
