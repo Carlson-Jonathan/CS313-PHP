@@ -27,14 +27,14 @@
                     follow in my sibling's footsteps and I obtained a degree in organizational 
                     communication from 1999 - 2005. From 2000 - 2002 I served a mission in  Moscow Russia. I met my wife while attending school and we moved to 
                     Madison Alabama just after graduation. 
-                </p>
+                </p><br><br>
                 
                 <p>
                     My wife and I have 4 kids (13-girl, 10-boy, 5-boy, 1.5-girl). We enjoy
                     taking family vacations together with my wife's parents to the beach, 
                     the mountains, and even on cruises. On a typical day we take walks to 
                     the park, play frisbee, jump on the trampoline, and scream at eachother.
-                </p>
+                </p><br><br>
                 
                 <p>
                     I worked in retail for a couple of years before starting a job with the
