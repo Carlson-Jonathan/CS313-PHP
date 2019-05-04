@@ -1,0 +1,138 @@
+* { margin: 0; box-sizing: border-box; }
+
+body {
+    background-image: url("../images/diagonalley.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+main, header, footer {
+    margin: 0 auto;
+    background-color: darkgoldenrod;
+}
+
+header, footer {
+    width: 100%;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    min-height: 900px;
+}
+
+iframe {
+    margin: auto;
+}
+
+@keyframes colorhead {
+    0%    {color: purple;}
+    25%   {color: yellow;}
+    50%   {color: darkgreen;} 
+    75%   {color: lightblue;}
+    100%  {color: purple;} 
+}
+
+h1 {
+    text-align: center;
+    color: darkred;
+    font-size: 4em;
+    margin: 0 0 10px 0;
+    font-family: 'Amita', serif;
+    padding: 20px 0 0 0;
+    animation-name: colorhead;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+h2 {
+    font-size: 1.5em;
+    padding: 5px;
+    color: darkred;
+}
+
+h3 {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+h4 {
+    margin-left: 100px;
+    color: green;
+}
+
+.columnleft, .columnright {
+    float: left;
+    padding: 5px;
+    width: 75%;
+    text-align: left;
+}
+
+.columnright {
+    width: 25%;
+}
+
+.left {
+    text-align: left;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cart {
+    margin: 10px 5px 0 40px;
+}
+
+input[type=checkbox]
+{
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.sub {
+    margin: 10px 0 0 10px;
+}
+
+.checkboxtext
+{
+    font-size: 110%;
+    display: inline;
+}
+
+.checkout {
+    margin-left: 37%;
+}
+
+p {
+    margin-top: 15px;
+    color: darkred;
+    font-size: 1.15em;
+}
+
+.summary {
+    margin-left: 50px;
+    text-align: left;
+}
+
+
+button {
+    margin: 20px;
+    border-radius: 10px;
+    height: 35px;
+    box-shadow: 5px 5px;
+}
+
+footer{
+    padding: 15px;
+
+}
+
+
