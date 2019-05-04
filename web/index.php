@@ -23,7 +23,7 @@
                 <h3>Assignments:</h3>
                 <ul>
                     <a href="/pages/aboutme.php"><li>About Me</li></a>
-                    <a href=""><li>(comming soon!)</li></a>
+                    <a href="pages/prove03/store.php"><li>Shopping Cart Assignment</li></a>
                     <a href=""><li>(comming soon!)</li></a>
                     <a href=""><li>(comming soon!)</li></a>
                     <a href=""><li>(comming soon!)</li></a>
