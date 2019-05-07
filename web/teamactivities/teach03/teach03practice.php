@@ -27,10 +27,10 @@
             <?php 
                 echo "<p>Major</p>";
                 
-                $majors = array("Computer Science", "Web Design and Development", "Computer information Systems", "Computer Engineering");
+                $majors = array("CS" => "Computer Science", "WD" => "Web Design and Development", "CIT" => "Computer information Systems", "CE" => "Computer Engineering");
                 
-                foreach($majors as $i)                     
-                    echo "<input type='radio' name='major' value='$i'> $i <br>"; 
+                foreach($majors as $key => $value)                     
+                    echo "<input type='radio' name='major' value='$value'> $value <br>"; 
             
                 echo "<p>Comments</p><textarea name='comments'></textarea><br>";
                 

@@ -15,7 +15,7 @@
             <header>
                 <?php include $_SERVER['DOCUMENT_ROOT'].'/modules/header.php'; ?>
             </header>
-        </div>https://tranquil-mesa-11516.herokuapp.com/
+        </div>
         
         <div class="align">
             <main>
