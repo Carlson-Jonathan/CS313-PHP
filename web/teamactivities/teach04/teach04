@@ -4,18 +4,19 @@ Team 1 - Jonathan Carlson, Corbin Lenning, Dennis Bingham, Steven Milton
 
 CREATE Table users(user_ID int PRIMARY KEY, name varchar(255));
 
-INSERT INTO users VALUES(1, Johnson);
-INSERT INTO users VALUES(2, Bednar);
+INSERT INTO users VALUES(1, 'Johnson');
+INSERT INTO users VALUES(2, 'Bednar');
 
 CREATE TABLE speaker(speaker_ID int PRIMARY KEY, name varchar(255));
 
-INSERT INTO speaker VALUES(1, Nelson);
-INSERT INTO speaker VALUES(2, Holland);
+INSERT INTO speaker VALUES(1, 'Nelson');
+INSERT INTO speaker VALUES(2, 'Holland');
+INSERT INTO speaker VALUES(3, 'Uchtdorf');
 
 CREATE TABLE conference(conference_ID int PRIMARY KEY, date varchar(255));
 
-INSERT INTO conference(1, '04/2019');
-INSERT INTO conference(2, '10/2018');
+INSERT INTO conference VALUES(1, '04/2019');
+INSERT INTO conference VALUES(2, '10/2018');
   
 CREATE TABLE session(session_ID int PRIMARY KEY, conference_ID int REFERENCES conference(conference_ID), speaker_ID int REFERENCES speaker(speaker_ID), name varchar(255));
 
@@ -24,8 +25,13 @@ INSERT INTO session VALUES(2, 2, 1, 'Sunday Afternoon');
 
 CREATE TABLE notes(notesTable_ID int PRIMARY KEY, session_ID int REFERENCES session(session_ID), user_ID int REFERENCES users(user_ID), speaker_ID int REFERENCES speaker(speaker_ID), conference_ID int REFERENCES conference(conference_ID), notes text);
 
-INSERT INTO notes VALUES(1, 2, 1, 1, 'Bednar is the best apostle ever!');
-INSERT INTO notes VALUES(2, 1, 1, 2, 'Every night Satan checks under his bed for Jeffrey R Holland');
+INSERT INTO notes VALUES(1, 2, 1, 1, 2, 'Bednar is the best apostle ever!');
+INSERT INTO notes VALUES(2, 1, 2, 2, 1, 'Every night Satan checks under his bed for Jeffrey R Holland');
+INSERT INTO notes VALUES(3, 2, 1, 1, 1, 'Great talk!');
+INSERT INTO notes VALUES(4, 1, 2, 3, 2, 'This was really hard to type.');
+INSERT INTO notes VALUES(5, 2, 1, 2, 1, 'Here are some more talk notes.');
+INSERT INTO notes VALUES(6, 1, 2, 3, 1, 'The last talk of the conference. Lets go home and eat!');
+
 
     
     
