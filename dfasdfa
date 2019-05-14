@@ -1,0 +1,5 @@
+ father | mother  | child1 | child2 | child3 | child4 | name  | age | sex  |   description   
+--------+---------+--------+--------+--------+--------+-------+-----+------+-----------------
+ Jonny  | Shannon | Ella   | Wesley | James  | Evelyn | Jonny |  38 | Male | Super handsome!
+(1 row)
+
