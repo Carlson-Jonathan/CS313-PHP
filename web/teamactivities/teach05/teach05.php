@@ -20,7 +20,7 @@
             $user = 'postgres';
             $password = 'password';
         
-            $dbUrl = getenv('postgresql-clear-72768');
+            $dbUrl = getenv('DATABASE_URL');
 
             if (empty($dbUrl)) {
                 $dbUrl = "postgres://postgres:password@localhost:5432/mytestdb";
@@ -48,8 +48,10 @@
 
             foreach ($db->query('SELECT now()') as $row)
             {
-             print "<p>$row[0]</p>\n\n";
+             print "<br><p>$row[0]</p>\n\n<br><br>";
             }
+        
+
         
         /*
         
