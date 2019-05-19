@@ -50,34 +50,15 @@
             {
              print "<br><p>$row[0]</p>\n\n<br><br>";
             }
-        
-
-        
-        /*
-        
-            echo "<p>Hello Database!</p>";
-            
-            $user = 'postgres';
-            $password = 'password';
-    
-            try
+ 
+            foreach ($db->query('SELECT * FROM players') as $row)
             {
-              $db = new PDO('pgsql:host=localhost;port=5432;dbname=mytestdb', $user, $password);
-              $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            }
-            catch (PDOException $ex)
-            {
-              echo 'Error!: ' . $ex->getMessage();
-              die();
-            }
-        
-        */
-            foreach ($db->query('SELECT * FROM family') as $row)
-            {
-              echo 'Name: ' . $row['name'] . " ";
-              echo 'Sex: ' . $row['sex'] . " ";        
-              echo ' Age: ' . $row['age'];
-              echo '<br/>';
+              echo 'Player Name: ' . $row['playername'] . " " . 
+                   'First Name: ' . $row['realfirstname'] . " " .        
+                   'Last Name:' . $row['reallastname'] . " " .
+                   'Catch Phrase: ' . $row['bio'] . " " .
+                   'Age: ' . $row['age'] . " " . 
+                   'Number: ' . $row['playernumber'] . '<br>';
             }
             
   
