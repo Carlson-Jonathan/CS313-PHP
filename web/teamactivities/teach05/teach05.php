@@ -20,7 +20,7 @@
             $user = 'postgres';
             $password = 'password';
         
-            $dbUrl = getenv('https://tranquil-mesa-11516.herokuapp.com/teamactivities/teach04/');
+            $dbUrl = getenv('https://tranquil-mesa-11516.herokuapp.com/teamactivities/teach05');
 
             if (empty($dbUrl)) {
                 $dbUrl = "postgres://postgres:password@localhost:5432/mytestdb";
