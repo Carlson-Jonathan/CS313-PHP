@@ -17,16 +17,8 @@
      
         <?php
             include($_SERVER['DOCUMENT_ROOT'].'/scripts/postgresqlsetup.php');
-            echo '<p>Scripture Resrouces</p>';
-
-          foreach (db as $row) {
-                print "<span class='bold'>" . $row['book'] . " " . $row['chapter'] .
-                ":" . $row['verse'] . "</span>";
-            }
-
+            echo '<p>Hello Teach05 Database!</p>';
         ?>
-
-
         
     </body>
         
@@ -35,11 +27,9 @@
         <meta name = "description" content="CS313 Teach05 Team 1">
         <link rel="stylesheet" href="normalize.css">
         <link id="styles" rel="stylesheet" href="teach05.css">
-    </head> 
+    </head>
     
     <header>
-
-
     </header>
     
     <body>
