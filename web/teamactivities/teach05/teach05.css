@@ -3,8 +3,8 @@
     box-sizing: border-box; 
 }
 
-
 p {
-    color: red;
-    font-size: 1.25em;
+    text-align: center;
+    color: darkblue;
+    font-size: 1.5em;
 }
