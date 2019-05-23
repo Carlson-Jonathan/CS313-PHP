@@ -47,7 +47,6 @@
             <input type="submit" name="submit" value="Search"> 
         </form>
 
-
         <?php
             $statement = $db->prepare("SELECT player_id, derby_name, first_name, last_name, age, bio, derby_number FROM players WHERE player_id = '" . $player_id . "';");
             $statement->execute();
@@ -66,8 +65,6 @@
                 echo "<p><strong>Serial ID: </strong>" . $_SESSION['player_id'] . "<br><strong>Derby Name: </strong>" . $_SESSION['derby_name'] . "<br><strong>First Name: </strong>" . $_SESSION['first_name'] . "<br><strong>Last Name: </strong>" . $_SESSION['last_name'] . "<br><strong>Age: </strong>" . $_SESSION['age'] . "<br><strong>Derby Number: </strong>" . $_SESSION['derby_number'] . "<br><strong>Catch Phrase: </strong>" . $_SESSION['bio'] . "</p>";
             }
         ?>
-    
-    
     </main>
     
     <footer>

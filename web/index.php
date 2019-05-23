@@ -24,7 +24,7 @@
                 <ul>
                     <a href="/pages/aboutme.php"><li>About Me</li></a>
                     <a href="pages/prove03/store.php"><li>Shopping Cart Assignment</li></a>
-                    <a href=""><li>(comming soon!)</li></a>
+                    <a href="pages/prove05/prove05.php"><li>PostgreSQL Database Query</li></a>
                     <a href=""><li>(comming soon!)</li></a>
                     <a href=""><li>(comming soon!)</li></a>
                     <a href=""><li>(comming soon!)</li></a>
