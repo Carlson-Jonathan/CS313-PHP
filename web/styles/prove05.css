@@ -33,3 +33,12 @@ p {
 strong {
     color: darkblue;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: darkblue;
+    color: yellow;
+    text-align: center;
+}

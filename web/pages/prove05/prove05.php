@@ -64,10 +64,23 @@
                 // Since it is in a loop, this will display multiple results if found.
                 echo "<p><strong>Serial ID: </strong>" . $_SESSION['player_id'] . "<br><strong>Derby Name: </strong>" . $_SESSION['derby_name'] . "<br><strong>First Name: </strong>" . $_SESSION['first_name'] . "<br><strong>Last Name: </strong>" . $_SESSION['last_name'] . "<br><strong>Age: </strong>" . $_SESSION['age'] . "<br><strong>Derby Number: </strong>" . $_SESSION['derby_number'] . "<br><strong>Catch Phrase: </strong>" . $_SESSION['bio'] . "</p>";
             }
+             
+            $statement2 = $db->prepare("SELECT family.balance_owed, parents.first_name, parents.last_name FROM parents, players, family
+            WHERE $player_id = family.player_id AND mother = parents.parent_id;");
+            $statement2->execute();
+                    
+            while ($row = $statement2->fetch(PDO::FETCH_ASSOC)) {
+                $_SESSION['parent_fn'] = $row['first_name'];
+                $_SESSION['parent_ln'] = $row['last_name'];
+                $_SESSION['dues'] = $row['balance_owed'];
+            }
+            echo "<p><strong>Parent: </strong>" . $_SESSION['parent_fn'] . " " . $_SESSION['parent_ln'] . "</p>";  
+            echo "<p><strong>Team Dues Owed: $</strong>" . $_SESSION['dues'] . "</p>";  
         ?>
     </main>
     
     <footer>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/modules/footer.php'; ?>
     </footer>
     
 
