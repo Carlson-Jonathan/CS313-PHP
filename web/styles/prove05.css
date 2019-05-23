@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+}
+
+h1 {
+    background-color: darkblue;
+    color: yellow;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px; 
+}
+
+.serverinfo {
+    font-size: .5em;
+    background-color: darkblue;
+    color: white;
+    margin: auto;
+    width: 100%;
+    padding: 15px;
+    font-weight: 900;
+    text-align: left;
+}
+
+main {
+    margin: 20px 100px;
+}
+
+p {
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+strong {
+    color: darkblue;
+}

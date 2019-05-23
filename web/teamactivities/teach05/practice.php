@@ -41,13 +41,13 @@
         
         // Loop through the database rows and set each column item to a variable.
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            $_SESSION['book'] = $row['book'];
-            $_SESSION['chapter'] = $row['chapter'];
-            $_SESSION['verse'] = $row['verse'];
-            $_SESSION['content'] = $row['content'];
+            $_SESSION["book"] = $row['book'];
+            $_SESSION["chapter"] = $row['chapter'];
+            $_SESSION["verse"] = $row['verse'];
+            $_SESSION["content"] = $row['content'];
 
             // Since it is in a loop, this will display multiple results if found.
-            echo "<p><strong>" . $_SESSION['book'] . " " . $_SESSION['chapter'] . ":" . $_SESSION['verse'] . "</strong> - <a href='content.php'>See Scripture</a><p>";
+            echo "<p><strong>$_SESSION['book'] $_SESSION['chapter']:$_SESSION['verse']</strong> - <a href='content.php'>See Scripture</a><p>";
         }
     ?>
 

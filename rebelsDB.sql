@@ -15,12 +15,12 @@
 * This table is a "many-to-one" that links to no other tables.
 ******************************************************************************/
 CREATE TABLE public.players (
-	ID SERIAL NOT NULL PRIMARY KEY,		
-	playername VARCHAR(100) NOT NULL UNIQUE,
-	realfirstname VARCHAR(100) NOT NULL,
-	reallastname VARCHAR(100) NOT NULL,
+	player_id SERIAL NOT NULL PRIMARY KEY,		
+	derby_name VARCHAR(100) NOT NULL UNIQUE,
+	first_name VARCHAR(100) NOT NULL,
+	last_name VARCHAR(100) NOT NULL,
 	bio text,
-    playernumber int NOT NULL,
+    derby_number int NOT NULL UNIQUE,
 	age INT NOT NULL
 );
 
@@ -73,28 +73,28 @@ INSERT INTO players VALUES(11, 'Evi-DENTS', 'Evi', 'Jones',
 * monthly dues they may still owe to the team, and a foreign key linking to 
 * the player they are the parent of. 
 ******************************************************************************/
-CREATE TABLE public.parent (
-	ID SERIAL NOT NULL PRIMARY KEY,
-	parentfirstname VARCHAR(100) NOT NULL,
-	parentlastname VARCHAR(100) NOT NULL,
+CREATE TABLE public.parents (
+	parent_id SERIAL NOT NULL PRIMARY KEY,
+	first_name VARCHAR(100) NOT NULL,
+	last_name VARCHAR(100) NOT NULL
 );
 
-INSERT INTO parent VALUES (1, 'Jonathan', 'Carlson', 1);
-INSERT INTO parent VALUES (2, 'Shannon', 'Carlson', 1);
-INSERT INTO parent VALUES (16, 'Lesa', 'Crabtree', 2);
-INSERT INTO parent VALUES (3, 'Angel', 'Little', 3);
-INSERT INTO parent VALUES (4, 'Grady', 'Little', 3);
-INSERT INTO parent VALUES (5, 'Sidra', 'Hawkins', 5);
-INSERT INTO parent VALUES (6, 'Katherine', 'Madden', 7);
-INSERT INTO parent VALUES (7, 'James', 'Madden', 7);
-INSERT INTO parent VALUES (8, 'Stefanie', 'Norris', 4);
-INSERT INTO parent VALUES (9, 'Melissa', 'Shepherd', 6);
-INSERT INTO parent VALUES (10, 'Jennifer', 'Fidler', 8);
-INSERT INTO parent VALUES (11, 'Ken', 'Fidler', 8);
-INSERT INTO parent VALUES (12, 'Thea', 'Perkins', 9);
-INSERT INTO parent VALUES (13, 'Casey', 'Perkins', 9);
-INSERT INTO parent VALUES (14, 'April', 'Lumsdin', 10);
-INSERT INTO parent VALUES (15, 'Valerie', 'Porter', 11);
+INSERT INTO parents VALUES (1, 'Jonathan', 'Carlson');
+INSERT INTO parents VALUES (2, 'Shannon', 'Carlson');
+INSERT INTO parents VALUES (16, 'Lesa', 'Crabtree');
+INSERT INTO parents VALUES (3, 'Angel', 'Little');
+INSERT INTO parents VALUES (4, 'Grady', 'Little');
+INSERT INTO parents VALUES (5, 'Sidra', 'Hawkins');
+INSERT INTO parents VALUES (6, 'Katherine', 'Madden');
+INSERT INTO parents VALUES (7, 'James', 'Madden');
+INSERT INTO parents VALUES (8, 'Stefanie', 'Norris');
+INSERT INTO parents VALUES (9, 'Melissa', 'Shepherd');
+INSERT INTO parents VALUES (10, 'Jennifer', 'Fidler');
+INSERT INTO parents VALUES (11, 'Ken', 'Fidler');
+INSERT INTO parents VALUES (12, 'Thea', 'Perkins');
+INSERT INTO parents VALUES (13, 'Casey', 'Perkins');
+INSERT INTO parents VALUES (14, 'April', 'Lumsdin');
+INSERT INTO parents VALUES (15, 'Valerie', 'Porter');
 
 /******************************************************************************
 * LOGIN table
@@ -103,10 +103,10 @@ INSERT INTO parent VALUES (15, 'Valerie', 'Porter', 11);
 ******************************************************************************/
 CREATE TABLE public.login (
 	ID SERIAL NOT NULL PRIMARY KEY,
-	username VARCHAR(100) NOT NULL UNIQUE,
-	userpassword VARCHAR(100) NOT NULL,
+	user_name VARCHAR(100) NOT NULL UNIQUE,
+	user_password VARCHAR(100) NOT NULL,
 	display_name VARCHAR(100) NOT NULL,
-	parent_ID INT NOT NULL REFERENCES public.parent(ID)
+	parent_id INT NOT NULL REFERENCES public.parents(parent_id)
 );
 
 INSERT INTO login VALUES (1, 'Bumperpants', 'PleaseDontHackMyAccount!', 
@@ -122,8 +122,8 @@ INSERT INTO login VALUES (2, 'PhotoHoney', 'Ilovemyhoney123456!@#$',
 * single game so they select the best performers only. The rest are benched.
 ******************************************************************************/
 CREATE TABLE public.roster (
-	ID SERIAL NOT NULL PRIMARY KEY,
-	player_ID INT NOT NULL REFERENCES public.players(ID)
+	roster_id SERIAL NOT NULL PRIMARY KEY,
+	player_id INT NOT NULL REFERENCES public.players(player_id)
 );	
 
 INSERT INTO roster VALUES(1, 1);
@@ -139,11 +139,11 @@ INSERT INTO roster VALUES(6, 11);
 * and shows if they owe any dues.
 ******************************************************************************/
 CREATE TABLE public.family (
-    ID SERIAL NOT NULL PRIMARY KEY,
-    player_ID INT NOT NULL REFERENCES public.players(ID),
-    mother INT REFERENCES public.parent(ID),
-    father INT REFERENCES public.parent(ID),
-    balanceowed int
+    family_id SERIAL NOT NULL PRIMARY KEY,
+    player_id INT NOT NULL REFERENCES public.players(player_id),
+    mother INT REFERENCES public.parents(parent_id),
+    father INT REFERENCES public.parents(parent_id),
+    balance_owed int
 );
 
 INSERT INTO family VALUES(1, 1, 1, 2, 0);
