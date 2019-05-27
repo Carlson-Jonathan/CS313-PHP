@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="../../styles/normalize.css">
-    <link id="styles" rel="stylesheet" href="../teach05/teach05.css">
+    <link id="styles" rel="stylesheet" href="../teach06/teach06.css">
 </head>
 
 <body>  
@@ -17,7 +17,7 @@
     ***************************************************************************************************/
 
         //Include needed files
-        require($_SERVER['DOCUMENT_ROOT'].'/scripts/postgresqlsetup.php');
+        //require($_SERVER['DOCUMENT_ROOT'].'/teamactivities/teach06/postgresqlsetup.php');
         require('content.php');
         //echo "<br><br><br>";
         

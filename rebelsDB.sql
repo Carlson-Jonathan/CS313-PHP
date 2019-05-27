@@ -179,9 +179,8 @@ INNERJOIN players
 ON family.player_ID = parent.
 
 
-SELECT players.playername, parent.parentfirstname, parent1.parentfirstname FROM parent, parent AS parent1, players, family
-WHERE players.ID = family.player_ID AND mother = parent1.id AND father = parent.id;
-
+SELECT players.derby_name, parents.first_name, parent1.first_name FROM parents, parents AS parent1, players, family
+WHERE players.player_id = family.player_id AND mother = parent1.parent_id AND father = parents.parent_id;
 
 
 

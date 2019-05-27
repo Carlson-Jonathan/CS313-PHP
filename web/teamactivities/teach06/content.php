@@ -8,7 +8,7 @@
 
     <?php
     	// Set up database for this page
-    	require($_SERVER['DOCUMENT_ROOT'].'/scripts/postgresqlsetup.php');
+    	require('postgresqlsetup.php');
 
     	// Pulls id from prior page link (see special syntax)
     	if(isset($_GET['scripture_id']));

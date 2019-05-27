@@ -6,7 +6,7 @@
     $password = 'password';
         
     $dbUrl = getenv('DATABASE_URL');
-    if (empty($dbUrl)) {$dbUrl = "postgres://postgres:password@localhost:5432/teach05";}
+    if (empty($dbUrl)) {$dbUrl = "postgres://postgres:password@localhost:5432/teach06";}
 
     $dbopts = parse_url($dbUrl);
     $dbHost = $dbopts["host"];
