@@ -10,7 +10,7 @@ INSERT INTO scriptures(book,chapter,verse,content) VALUES(
 	'And the light shineth in darkness; and the darkness 
 	comprehended it not.'),
 
-('Doctrine and Covenants',88,49,
+('font-sizeDoctrine and Covenants',88,49,
 	'The light shineth in darkness, and the darkness 
 	comprehendeth it not; nevertheless, the day shall come 
 	when you shall comprehend even God, being quickened in 
@@ -60,4 +60,15 @@ INSERT INTO scriptures(book,chapter,verse,content) VALUES(
 	meek, humble, patient, full of love, willing to submit to 
 	all things which the Lord seeth fit to inflict upon him, 
 	even as a child doth submit to his father.');
+
+CREATE TABLE topic(id SERIAL PRIMARY KEY, name VARCHAR(100));
+
+INSERT INTO topic(name) VALUES
+('Faith'),
+('Sacrifice'),
+('Charity');
+
+CREATE TABLE topic_scripture(id SERIAL PRIMARY KEY, 
+	topic_id int REFERENCES topic(id), 
+	scripture_id int REFERENCES scriptures(id));
 

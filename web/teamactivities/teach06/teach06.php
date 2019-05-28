@@ -17,7 +17,7 @@
     ***************************************************************************************************/
 
         //Include needed files
-        //require($_SERVER['DOCUMENT_ROOT'].'/teamactivities/teach06/postgresqlsetup.php');
+        require($_SERVER['DOCUMENT_ROOT'].'/teamactivities/teach06/postgresqlsetup.php');
         require('content.php');
         //echo "<br><br><br>";
         
