@@ -18,12 +18,19 @@
 <body>
     <?php
         require($_SERVER['DOCUMENT_ROOT'].'/scripts/prove06setup.php');
-        
-        $dname = $_POST['dname'];
-        $dnumber = $_POST['dnumber'];
-        $pfname = $_POST['pfname'];
-        $plname = $_POST['plname'];
-        $balance = $_POST['balance'];
+
+        function test_input($data) {
+          $data = trim($data);
+          $data = stripslashes($data);
+          $data = htmlspecialchars($data);
+          return $data;
+        } 
+
+        $dname = test_input($_POST['dname']);
+        $dnumber = test_input($_POST['dnumber']);
+        $pfname = test_input($_POST['pfname']);
+        $plname = test_input($_POST['plname']);
+        $balance = test_input($_POST['balance']);
 
         echo $dname . " " . $dnumber . " " . $pfname . " " . 
         $plname . " " . " $" . $balance;
@@ -92,8 +99,8 @@
         }
 
         // Redirect to previous page without displaying this one.
-        header("Location: prove06.php");
-        die();
+        //header("Location: prove06.php");
+        //die();
     ?>
 </body>
 </html>

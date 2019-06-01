@@ -16,8 +16,8 @@
     $dbName = ltrim($dbopts["path"],'/');
 
     // Displays which server you are viewing from
-    print "<br><h4>Current Server and Database Information:<br>";
-    print "PostgreSQL:host = $dbHost<br>Port = $dbPort<br>Database Name = $dbName\n<h4>";
+    //print "<br><h4>Current Server and Database Information:<br>";
+    //print "PostgreSQL:host = $dbHost<br>Port = $dbPort<br>Database Name = $dbName\n<h4>";
     
     try {
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);

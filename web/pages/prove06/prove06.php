@@ -26,22 +26,22 @@
 
     <main>
         <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $player_id = $_SESSION['player_id'];
-                $derby_name = $_POST["dname"];
-                $derby_number = $_POST["dnumber"];
-                $parent_id = $_SESSION['parent_id'];
-                $pfname = $_POST["pfname"];
-                $plname = $_POST["plname"];
-                $balance = $_POST["balance"];
-            }
-
             // Security
             function test_input($data) {
               $data = trim($data);
               $data = stripslashes($data);
               $data = htmlspecialchars($data);
               return $data;
+            }
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $player_id = test_input($_SESSION['player_id']);
+                $derby_name = test_input($_POST["dname"]);
+                $derby_number = test_input($_POST["dnumber"]);
+                $parent_id = test_input($_SESSION['parent_id']);
+                $pfname = test_input($_POST["pfname"]);
+                $plname = test($_POST["plname"]);
+                $balance = test($_POST["balance"]);
             }
         ?>
 
@@ -103,7 +103,7 @@
                     </tr>
                 </table>
                 </form>
-                <br><br><br><br>";
+                <br><br><br><br><br>";
 
         ?>
         
