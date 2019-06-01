@@ -98,9 +98,9 @@
             die();          
         }
 
-        // Redirect to previous page without displaying this one.
-        //header("Location: prove06.php");
-        //die();
+        //Redirect to previous page without displaying this one.
+        header("Location: prove06.php");
+        die();
     ?>
 </body>
 </html>
