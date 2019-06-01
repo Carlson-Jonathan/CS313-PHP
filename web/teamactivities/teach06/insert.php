@@ -15,7 +15,7 @@
 
 	<form method="post" action="display.php">
 		<label for="book">Insert Book name</label><br>
-		<input type="text" name="book" placeholder="insert book" ><br>
+		<input type="text" name="book" placeholder="insert book"><br>
 
 		<label for="chapter">Insert Chapter</label><br>
 		<input type="text" name="chapter" placeholder="insert chapter"><br>
@@ -34,7 +34,6 @@
 			while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 		        $id = $row['id'];
 		        $name = $row['name'];
-
 
 				echo "<br><input type='checkbox' name='topic[]' value='$id'>";
 	    	}

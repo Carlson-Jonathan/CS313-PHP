@@ -17,11 +17,11 @@
 CREATE TABLE public.players (
 	player_id SERIAL NOT NULL PRIMARY KEY,		
 	derby_name VARCHAR(100) NOT NULL UNIQUE,
-	first_name VARCHAR(100) NOT NULL,
-	last_name VARCHAR(100) NOT NULL,
+	first_name VARCHAR(100),
+	last_name VARCHAR(100),
 	bio text,
     derby_number int NOT NULL UNIQUE,
-	age INT NOT NULL
+	age INT
 );
 
 INSERT INTO players VALUES(1, 'Ellagator', 'Elinor', 'Carlson', 
@@ -141,9 +141,9 @@ INSERT INTO roster VALUES(6, 11);
 CREATE TABLE public.family (
     family_id SERIAL NOT NULL PRIMARY KEY,
     player_id INT NOT NULL REFERENCES public.players(player_id),
-    mother INT REFERENCES public.parents(parent_id),
+    mother INT NOT NULL REFERENCES public.parents(parent_id),
     father INT REFERENCES public.parents(parent_id),
-    balance_owed int
+    balance_owed int NOT NULL
 );
 
 INSERT INTO family VALUES(1, 1, 1, 2, 0);
@@ -181,6 +181,22 @@ ON family.player_ID = parent.
 
 SELECT players.derby_name, parents.first_name, parent1.first_name FROM parents, parents AS parent1, players, family
 WHERE players.player_id = family.player_id AND mother = parent1.parent_id AND father = parents.parent_id;
+
+-- Delete all test data (data that is inserted)
+
+DELETE FROM family
+WHERE family_id > 9;
+
+DELETE FROM players
+WHERE player_id > 11;
+
+DELETE FROM parents
+WHERE parent_id > 16;
+
+-- Call test tables
+SELECT * FROM players;
+SELECT * FROM parents;
+SELECT * FROM family;
 
 
 

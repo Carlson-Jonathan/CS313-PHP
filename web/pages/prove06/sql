@@ -1,0 +1,9 @@
+SELECT * FROM players, family, parents 
+WHERE players.player_id = family.player_id AND family.mother = parents.parent_id
+AND family.father = parents.parent_id;
+
+SELECT players.derby_number, players.derby_name, parents.first_name, parent1.first_name, family.balance_owed FROM parents, parents AS parent1, players, family
+WHERE players.player_id = family.player_id AND mother = parent1.parent_id AND father = parents.parent_id;
+
+SELECT players.player_id, players.derby_name, players.derby_number, parents.first_name, parent1.first_name, parents.last_name, family.balance_owed FROM parents, parents AS parent1, players, family
+WHERE players.player_id = family.player_id AND mother = parent1.parent_id AND father = NULL;

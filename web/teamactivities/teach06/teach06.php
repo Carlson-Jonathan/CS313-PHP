@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE HTML>  
 <html>
 
@@ -54,6 +55,38 @@
             echo "<p><strong>" . $book . " " . $chapter . ":" . $verse . "</strong> - <a href='content.php?scripture_id=$id'>See Scripture</a><p>";
         }
     ?>
+    <br>
+    <form method="post" action="display.php">
+        <label for="ibook">Insert Book name</label><br>
+        <input type="text" name="ibook" placeholder="insert book" ><br><br>
+
+        <label for="ichapter">Insert Chapter</label><br>
+        <input type="text" name="ichapter" placeholder="insert chapter"><br><br>
+
+        <label for="iverse">Insert Verse</label><br>
+        <input type="text" name="iverse" placeholder="verse"><br><br>
+
+        <label for="icontent">Insert Scripture Text</label><br>
+        <textarea name="icontent" rows="6" cols="50"></textarea><br><br>
+
+        <?php  
+
+            $statement1 = $db->prepare("SELECT * FROM topic;");
+            $statement1->execute();          
+            echo "Select Topic:";
+
+            while ($row = $statement1->fetch(PDO::FETCH_ASSOC)) {
+                $_SESSION['id'] = $row['id'];
+                $name = $row['name'];
+
+                echo "<br><input type='checkbox' name='$name' value='$name'>";
+                echo $name;
+            }
+            echo "<br>";
+
+        ?>
+        <br><input type="submit" value="submit">
+    </form>
 
 </body>
 </html>

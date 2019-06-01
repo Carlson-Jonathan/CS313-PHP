@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,40 +10,41 @@
 	<?php 
 		require('postgresqlsetup.php');
 
-		$book = $_POST['book'];
-		$chapter = $_POST['chapter'];
-		$verse = $_POST['verse'];
-		$content = $_POST['content'];
+		$book = $_POST['ibook'];
+		$chapter = $_POST['ichapter'];
+		$verse = $_POST['iverse'];
+		$content = $_POST['icontent'];
 		$topic = $_POST['topic'];
+
+		echo $book . " " . $chapter . ":" . $verse . " - " . $content . "<br>Topic: ";
 
 		//$statement = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content)
 		//	VALUES(:book, :chapter, :verse, :content)');
 	
 		try {
 
-			$query = 'INSERT INTO scriptures(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
+			$query = 'INSERT INTO scriptures(book, chapter, verse, content) 
+			VALUES(:book, :chapter, :verse, :content)';
+
 			$statement = $db->prepare($query);
 
-		$statement->bindValue(':book', $book);
-		$statement->bindValue(':chapter', $chapter);
-		$statement->bindValue(':verse', $verse);
-		$statement->bindValue(':content', $content);
-		$statement->execute();
-
-
+			$statement->bindValue(':book', $book);
+			$statement->bindValue(':chapter', $chapter);
+			$statement->bindValue(':verse', $verse);
+			$statement->bindValue(':content', $content);
+			$statement->execute();
 		}
 	    catch (PDOException $ex) {
 	        print "<p>error: $ex->getMessage() </p>\n\n";
 	        die();			
 		}
 
-		$sqlid = $db->lastInsertId(id_seq);
+		//$sqlid = $db->lastInsertId(id_seq);
 
-		foreach($topic as $row) {
-			/*$statement = $db->prepare("INSERT INTO topic_scripture (topic_id, scripture_id)
-				VALUES($row['id'], $sqlid);");
-			$statement->execute();*/
-			var_dump($row);
+		foreach($topic as $key => $value) {
+			//$statement = $db->prepare("INSERT INTO topic_scripture (topic_id, scripture_id) VALUES($row['id'], $_SESSION['id');");
+			//$statement->execute();
+			echo $value;
 		}
 
 	?>
