@@ -5,5 +5,22 @@ AND family.father = parents.parent_id;
 SELECT players.derby_number, players.derby_name, parents.first_name, parent1.first_name, family.balance_owed FROM parents, parents AS parent1, players, family
 WHERE players.player_id = family.player_id AND mother = parent1.parent_id AND father = parents.parent_id;
 
-SELECT players.player_id, players.derby_name, players.derby_number, parents.first_name, parent1.first_name, parents.last_name, family.balance_owed FROM parents, parents AS parent1, players, family
-WHERE players.player_id = family.player_id AND mother = parent1.parent_id AND father = NULL;
+SELECT players.player_id, players.derby_name, players.derby_number, parents.parent_id, parents.first_name, parents.last_name, family.balance_owed FROM parents, players, family
+WHERE players.player_id = family.player_id AND mother = parents.parent_id;
+
+DELETE FROM family, players, parents
+WHERE family.player_id = 2 AND players.player_id = 2 AND mother = family.first_name;
+
+DELETE FROM family, 
+WHERE player_id = 2;
+DELETE from players
+WHERE player_id = 2;
+
+DELETE messages , usersmessages  FROM messages  INNER JOIN usersmessages  
+WHERE messages.messageid= usersmessages.messageid and messages.messageid = '1'
+
+
+<form method='post' action='remove.php?player_id=" . $_SESSION['player_id'] . "'>
+</form>
+
+INSERT INTO parents(first_name, last_name) VALUES('Joe', 'Shmoe');

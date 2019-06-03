@@ -2,19 +2,26 @@
     margin: 0;
 }
 
+body {
+    background-image: url("../RocketCityRebels/images/background.jpg");
+    background-attachment: fixed;
+}
+
 h1 {
     background-color: darkblue;
     color: yellow;
     text-align: center;
     margin: 0;
-    padding: 20px; 
+    padding: 10px; 
+    font-size: 1em;
 }
 
 main {
     margin: auto;
     width: 60%;
-    background-color: #e6e6ff;
-    padding: 20px 100px 0;
+    background-color: #e8e8ff;
+    padding: 60px 50px 0;
+    height: 100vh;
 }
 
 p {
@@ -33,6 +40,7 @@ footer {
     background-color: darkblue;
     color: yellow;
     text-align: center;
+    font-size: .8em;
 }
 
 table {

@@ -16,7 +16,7 @@
     
     <header>
         <h1>
-            Jonathan Carlson - CS313 - Prove06<br>
+            Jonathan Carlson - CS313 - Prove06:
             Rocket City Rebels Roller Derby Database
             <?php
                 require($_SERVER['DOCUMENT_ROOT'].'/scripts/prove06setup.php');
@@ -54,7 +54,7 @@
             
             echo "
                 <table>
-                    <tr>
+                    <tr style='font-weight: 900; font-size: 1.3em; background-color: darkblue; color: yellow'>
                         <th>Action</th>
                         <th>Derby Name</th>
                         <th>Derby Number</th>
@@ -73,7 +73,9 @@
 
                 echo "
                     <tr>
-                        <td><input type='submit' id='remove' value='Remove Player'></td>
+                        <form method='post' action='remove.php?player_id=" . $_SESSION['player_id'] . "'>
+                            <td><input type='submit' id='remove' value='Remove Player'></td>
+                        </form>
                         <td>" . $_SESSION['derby_name'] . "</td>
                         <td>" . $_SESSION['derby_number'] . "</td>
                         <td>" . $_SESSION['parent_fn'] . " " . $_SESSION['parent_ln'] . "</td>
@@ -103,7 +105,7 @@
                     </tr>
                 </table>
                 </form>
-                <br><br><br><br><br>";
+                <br><br>";
 
         ?>
         
