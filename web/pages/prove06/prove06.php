@@ -45,9 +45,13 @@
             }
         ?>
 
+        <form method="post" action="reset.php">
+            <input type="submit" id="reset" value="Reset Database">
+        </form>
+
         <?php
             $statement = $db->prepare("SELECT players.player_id, players.derby_name, players.derby_number, parents.parent_id, parents.first_name, parents.last_name, family.balance_owed FROM parents, players, family
-                WHERE players.player_id = family.player_id AND mother = parents.parent_id;");
+                WHERE players.player_id = family.player_id AND mother = parents.parent_id ORDER BY player_id;");
             $statement->execute();
 
             // Loop through the database rows and set each column item to a variable.
@@ -71,7 +75,9 @@
                 $_SESSION['parent_ln'] = $row['last_name'];
                 $_SESSION['owing'] = $row['balance_owed'];
 
+                $confirm = "Are you sure you want to update this balance? (No Undo)";    
                 echo "
+
                     <tr>
                         <form method='post' action='remove.php?player_id=" . $_SESSION['player_id'] . "'>
                             <td><input type='submit' id='remove' value='Remove Player'></td>
@@ -79,10 +85,10 @@
                         <td>" . $_SESSION['derby_name'] . "</td>
                         <td>" . $_SESSION['derby_number'] . "</td>
                         <td>" . $_SESSION['parent_fn'] . " " . $_SESSION['parent_ln'] . "</td>
-                        <form method='post'>
-                            <td>$
-                                <input type='number' value='" . $_SESSION['owing'] . "'>
-                                <input type='submit' name='submitbalance' id='update' value='Update Balance'>
+                        <form method='post' action='updatebalance.php?player_id=" . $_SESSION['player_id'] . "'>    
+                            <td>
+                                <input type='number' name='balance' value='" . $_SESSION['owing'] . "'>
+                                <input type='submit' name='submitbalance' id='update' onclick='return confirm(" . chr(34) . $confirm . chr(34) . ")' value='Update Balance'>
                             </td>
                         </form>
                     </tr>
