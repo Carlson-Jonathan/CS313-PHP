@@ -1,4 +1,13 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 header {
+}
+
+iframe {
+    margin: 0;
 }
 
 body {
@@ -10,7 +19,7 @@ body {
 main {
     width: 900px;
     margin: auto;
-    background-color: white;
+    opacity: 1;
 }
 
 iframe {
@@ -20,7 +29,7 @@ iframe {
 
 ul {
     list-style-type: none;
-    background-color: black;
+    background-color: #251010;
     margin: 0;
     text-align: center;
     position: fixed;
@@ -30,8 +39,8 @@ ul {
 li {
     display: inline-block;
     padding: 10px 25px;
-    font-family: arial;
-    color: white;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 1.2em;
 }
 
 li:hover {
@@ -39,7 +48,7 @@ li:hover {
 }
 
 a li {
-    color: white;
+    color: #5cf236;
 }
 
 li a.active {
@@ -47,14 +56,14 @@ li a.active {
     font-weight: 900;
 }
 
-* {
-    box-sizing: border-box;
-}
 
 .columnleft, .columnright {
     float: left;
     width: 60%;
     padding: 10px;
+    background-color: #251010;
+    color: white;
+    height: 425px;
 }
 
 .columnright {
@@ -68,24 +77,30 @@ li a.active {
 }
 
 h1 {
-    color: darkred;
+    font-family: 'Allerta Stencil', sans-serif;
+    color: #5cf236;
     text-align: center;
     margin: 0;
+}
+
+h1.bar {
+    background-color: #251010;
+    padding: 0 0 10px 0;
 }
 
 .quote {
     font-style: italic;
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1.15em;
     font-weight: 900;
+    color: #5cf236;
+    padding: 10px 45px 30px;
 }
 
 .script {
-    margin: 0 20px;
     font-size: 1.1em;
     background-color: #dddddd;
     padding: 20px;
-    border-radius:7px;
 }
 
 .schedule {
@@ -94,14 +109,20 @@ h1 {
 
 h4 {
     width: 100%;
-    background-color: black;
+    background-color: #251010;
     color: white;
     text-align: center;
     padding: 10px;
     margin: 0;
 }
 
-div.line {
-    border-bottom: solid black 2px;
-    width: 100%;
+p {
+    font-family: sans-serif;
+    color: #251010;
+}
+
+side {
+    display: inline-block;
+    color: white;
+    width: 100px;
 }
